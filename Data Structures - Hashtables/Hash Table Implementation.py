@@ -10,7 +10,7 @@ class Hashtable:
 		Optimal Load factor is around (2/3) such that the effect of hash collisions is minimum 
 		"""
 		self.bucket = 16
-		self.hashmap = [[] for i in range(self.bucket)]
+		self.hashmap = [[] for _ in range(self.bucket)]
 	
 	def __str__(self):
 		return str(self.__dict__)
@@ -37,10 +37,11 @@ class Hashtable:
 		"""
 		hash_value = self.hash(key)
 		reference = self.hashmap[hash_value]
-		for i in range(len(reference)):
-			if reference[i][0] == key:
-				return reference[i][1]
-		return -1
+		return next(
+		    (reference[i][1]
+		     for i in range(len(reference)) if reference[i][0] == key),
+		    -1,
+		)
 		
 	def remove(self, key):
 		"""

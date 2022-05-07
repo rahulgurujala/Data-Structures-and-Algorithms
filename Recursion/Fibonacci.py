@@ -4,7 +4,7 @@ def fib(num):
     a = 0
     b = 1
     total = 0
-    for i in range(num-1):
+    for _ in range(num-1):
         total = a+b
         a = b
         b = total
@@ -12,9 +12,7 @@ def fib(num):
 
 
 def fibonacci(num):
-    if num < 2:
-        return num
-    return fib(num-1) + fib(num-2)
+    return num if num < 2 else fib(num-1) + fib(num-2)
 
 
 print([fib(i) for i in range(10)])

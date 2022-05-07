@@ -14,22 +14,22 @@ class Queue:
   
   def enqueue(self,val):
     new_node = Node(val)
-    if self.first == None:
+    if self.first is None:
       self.first = new_node
       self.last = self.first
-      self.length += 1
     else:
       self.last.next = new_node
       self.last = new_node
-      self.length += 1
+
+    self.length += 1
   
   def dequeue(self):
     temp = self.first.next
     dequeued_element = self.first
-    if temp == None:
+    if temp is None:
       self.first = None
       self.length -= 1
-      return 
+      return
     self.first.next = None
     self.first = temp
     self.length -= 1

@@ -10,19 +10,19 @@ class BinarySearchTree:
   
   def insert(self,val):
     new_node = Node(val)
-    if self.root == None:
+    if self.root is None:
       self.root = new_node
-      return 
+      return
     temp = self.root
     while True:
       if new_node.val < temp.val:
-        if temp.left == None:
+        if temp.left is None:
           temp.left = new_node
           break
         else:
           temp = temp.left
       elif new_node.val > temp.val:
-        if temp.right == None:
+        if temp.right is None:
           temp.right = new_node
           break
         else:
@@ -33,7 +33,7 @@ class BinarySearchTree:
     while True:
       if temp.val == val:
         return True
-      elif temp == None:
+      elif temp is None:
         return False
       elif val < temp.val:
         temp = temp.left
@@ -43,10 +43,8 @@ class BinarySearchTree:
   def breadthfirstsearch(self):
     currnode = self.root
     mylist = []
-    queue = []
-    queue.append(currnode)
-
-    while len(queue) > 0:
+    queue = [currnode]
+    while queue:
       currnode = queue[0]
       del queue[0]
       mylist.append(currnode.val)
@@ -54,7 +52,7 @@ class BinarySearchTree:
         queue.append(currnode.left)
       if currnode.right:
         queue.append(currnode.right)
-    
+
     return mylist
   
   def recursivebfs(self,queue,mylist):

@@ -7,8 +7,8 @@ def mergesort(arr):
   mid = length // 2
   left = arr[:mid]
   right = arr[mid:]
-  print('Left {}'.format(left))
-  print('Right {}'.format(right))
+  print(f'Left {left}')
+  print(f'Right {right}')
 
   return merge(mergesort(left),mergesort(right))
 

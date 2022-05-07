@@ -1,7 +1,5 @@
 def reverse(stri):
-  mylist=[]
-  for i in range(len(stri)-1,-1,-1):
-    mylist.append(stri[i])
+  mylist = [stri[i] for i in range(len(stri)-1,-1,-1)]
   return ''.join(mylist)
 
 x=reverse('I am theja')
