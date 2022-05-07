@@ -1,10 +1,10 @@
 def bubblesort(arr):
   qw = 0
   while qw < len(arr):
-    for i in range(0,len(arr)-1):
+    for i in range(len(arr)-1):
       if arr[i] > arr[i+1]:
         arr[i] , arr[i+1] = arr[i+1] , arr[i]
-    
+
     qw += 1
   return arr
 

@@ -22,7 +22,7 @@ def mergesortedarr(a,b):
       mylist.append(a[i])
       i+=1
 
-    elif b[j]<a[i]:
+    else:
       mylist.append(b[j])
       j+=1
 

@@ -14,7 +14,7 @@ class Stack:
 
   def push(self,data):
     new_node = Node(data)
-    if self.bottom == None:
+    if self.bottom is None:
       self.bottom = new_node
       self.top = self.bottom
       self.length = 1

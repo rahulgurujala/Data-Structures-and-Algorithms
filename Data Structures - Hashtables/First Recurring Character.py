@@ -1,14 +1,14 @@
 def func(mylist):
 
-  for i in range(0,len(mylist)):
+  for i in range(len(mylist)):
     for j in range(i+1,len(mylist)):
       if mylist[i] == mylist[j]:
-        return mylist[i] 
+        return mylist[i]
   return 0
 
 def hashtable(mylist):
   mydict = {}
-  for i in range(0,len(mylist)):
+  for i in range(len(mylist)):
     if mylist[i] in mydict:
       return mylist[i]
     else:

@@ -14,7 +14,7 @@ class LinkedList():
   
   def append(self,data):
     new_node = Node(data)
-    if self.head == None:
+    if self.head is None:
       self.head = new_node
       self.tail = self.head
       self.length = 1
@@ -75,7 +75,7 @@ class LinkedList():
       print(temp.data , end = ' ')
       temp = temp.next
     print()
-    print('Length = '+str(self.length))
+    print(f'Length = {str(self.length)}')
 
   def reverse(self):
     prev = None
